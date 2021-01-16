@@ -1,14 +1,36 @@
 .gallery {
-  width: 80%;
+  width: 95%;
+  max-width: 1080px;
   margin: auto;
+  text-align: center;
 }
 
 .gallery img {
   height: 20em;
   width: 20em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
+}
+
+@-webkit-keyframes image-animation {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 80%;
+  }
+}
+
+@keyframes image-animation {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 80%;
+  }
 }
 
 #lightbox {
@@ -41,6 +63,10 @@
   background: rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 1px;
           box-shadow: 1px;
+  -webkit-animation: image-animation;
+          animation: image-animation;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
 }
 
 #lightbox #image-next {

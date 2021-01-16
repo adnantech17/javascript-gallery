@@ -1,13 +1,26 @@
 .gallery {
-    width: 80%;
+    width: 95%;
+    max-width: 1080px;
     margin: auto;
+    text-align: center;
 
     img{
         height: 20em;
         width: 20em;
+        justify-content: space-around;
 
         object-fit: cover;
         cursor: pointer;
+    }
+}
+
+@keyframes image-animation {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 80%;
     }
 }
 
@@ -33,6 +46,9 @@
     object-fit: contain;
     background: rgba(0, 0, 0, .9);
     box-shadow: 1px;
+
+    animation: image-animation;
+    animation-duration: .5s;
 }
 
 #lightbox #image-next {
